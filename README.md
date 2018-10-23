@@ -1,4 +1,4 @@
-# Deep Q Navigation Project in Unity
+# Deep Q Navigation Project
 
 Solving a simulation task of collecting bananas using a vanilla DQN agent
 
@@ -59,10 +59,10 @@ Choose the environment suitable for your machine. Unzipping will create another 
 
 Run ```p1_navigation/report.ipynb```
 
-Enter the right path for the Unity Banan environment in report.ipynb. For example for a 64-bit Linux machine: 
+Enter the right path for the Unity Banana environment in report.ipynb. For example on a Mac OSX: 
 
 ```
-env = UnityEnvironment(file_name="../Banana_Linux/Banana.x86_64")
+env = UnityEnvironment(file_name="Banana.app")
 
 ```
 
