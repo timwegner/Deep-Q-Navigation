@@ -1,30 +1,30 @@
 # Deep Q Navigation Project
 
-Solving a simulation task of collecting bananas using a vanilla DQN agent
+Solving a simulation task of collecting bananas using a DQN agent
 
-## Environment Details
+## Environment details
 The objective of the Unity simulation is to collect as many yellow bananas as possible while avoiding the blue bananas. 
-The following is the environment where the agent performs its task. 
 
-```
-Unity Academy name: Academy  
-Number of Brains: 1  
-Number of External Brains : 1  
-Lesson number : 0  
-Reset Parameters :
+**Action space:** This simulation contains a single agent that navigates the environment. It can perform four actions at each time step:
+0 - walk forward
+1 - walk backward
+2 - turn left
+3 - turn right
 
-Unity brain name: BananaBrain  
-Number of Visual Observations (per agent): 0  
-Vector Observation space type: continuous  
-Vector Observation space size (per agent): 37  
-Number of stacked Vector Observation: 1  
-Vector Action space type: discrete  
-Vector Action space size (per agent): 4  
-Vector Action descriptions: , , , 
+**State space:** The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction
 
-```
+**Reward function:** A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana
 
-The environment has 37 state spaces for the agent to operate in. There are 4 discrete actions spaces for forward, backward, turn left, turn right moves. The agent's problem is considered solved when average score of 13 is attained. The agent aim to achieve within 1800 episodes. 
+**DQN structure:** Similar to Google DeepMind's DQN Nature paper, "Human-level control through deep reinforcement learning", the adopted learning algorithm is a Deep Q-Learning algorithm. As the input vector is a state space instead of raw pixel data, a fully connected layer is used in the first layer instead of a convolutional neural network:
+*Fully connected layer 1: with input = 37 state spaces and output = 128 state spaces
+*Fully connected layer 2: with input = 128 and output = 64
+*Fully connected layer 3: with input = 64 and output = 4, (for each of the 4 actions)
+
+**Parameters used in the DQN algorithm:**
+Maximum steps per episode: 1000
+Starting epsilion: 1.0
+Ending epsilion: 0.01
+Epsilion decay rates: 0.7, 0.8, 0.9 and 0.99
 
 ## Installation Instruction
 
@@ -45,8 +45,8 @@ Run the following to create drlnd kernel in ipython so that the right unity envi
 
 Place <mark>report.ipynb</mark> in the folder <mark>p1_navigation/</mark> together with the following two files:
 
-1. dqn_agent.py - contains the DQN agent code. 
-2. model.py - contains neural network class for used as Q function
+*dqn_agent.py - contains the DQN agent code. 
+*model.py - contains neural network class for used as Q function
 
 The Unity Banana collection environment can be downloaded from here: 
 
@@ -59,11 +59,6 @@ Choose the environment suitable for your machine. Unzipping will create another 
 
 Run ```p1_navigation/report.ipynb```
 
-Enter the right path for the Unity Banana environment in report.ipynb. For example on a Mac OSX: 
-
-```
-env = UnityEnvironment(file_name="Banana.app")
-
-```
+Enter the right path for the Unity Banana environment in report.ipynb. 
 
 Run the remaining cell as ordered in ```report.ipynb``` to train the DQN agent. 
