@@ -6,10 +6,10 @@ Solving a simulation task of collecting bananas using a DQN agent
 The objective of the Unity simulation is to collect as many yellow bananas as possible while avoiding the blue bananas. 
 
 **Action space:** This simulation contains a single agent that navigates the environment. It can perform four actions at each time step:
-0 - walk forward
-1 - walk backward
-2 - turn left
-3 - turn right
+*0 - walk forward
+*1 - walk backward
+*2 - turn left
+*3 - turn right
 
 **State space:** The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction
 
