@@ -1,6 +1,6 @@
 # Deep Q Navigation Project
 
-Solving a simulation task of collecting bananas using a DQN agent
+Solving a simulation task of collecting bananas using a DQN agent.
 
 ## Environment details
 The objective of the Unity simulation is to collect as many yellow bananas as possible while avoiding the blue bananas. 
@@ -11,9 +11,9 @@ The objective of the Unity simulation is to collect as many yellow bananas as po
 * 2 - turn left
 * 3 - turn right
 
-**State space:** The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction
+**State space:** The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction.
 
-**Reward function:** A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana
+**Reward function:** A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.
 
 **DQN structure:** Similar to Google DeepMind's DQN Nature paper, "Human-level control through deep reinforcement learning", the adopted learning algorithm is a Deep Q-Learning algorithm. As the input vector is a state space instead of raw pixel data, a fully connected layer is used in the first layer instead of a convolutional neural network:
 * Fully connected layer 1: with input = 37 state spaces and output = 128 state spaces
@@ -36,7 +36,7 @@ cd deep-reinforcement-learning/python
 pip install .
 ```
 
-Run the following to create drlnd kernel in ipython so that the right unity environment is loaded correctly  
+Run the following to create drlnd kernel in ipython so that the right unity environment is loaded correctly:  
 
 
 ```python -m ipykernel install --user --name drlnd --display-name "drlnd"```
@@ -45,8 +45,8 @@ Run the following to create drlnd kernel in ipython so that the right unity envi
 
 Place <mark>report.ipynb</mark> in the folder <mark>p1_navigation/</mark> together with the following two files:
 
-*dqn_agent.py - contains the DQN agent code. 
-*model.py - contains neural network class for used as Q function
+* dqn_agent.py - contains the DQN agent code. 
+* model.py - contains neural network class for used as Q function
 
 The Unity Banana collection environment can be downloaded from here: 
 
