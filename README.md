@@ -6,25 +6,25 @@ Solving a simulation task of collecting bananas using a DQN agent
 The objective of the Unity simulation is to collect as many yellow bananas as possible while avoiding the blue bananas. 
 
 **Action space:** This simulation contains a single agent that navigates the environment. It can perform four actions at each time step:
-*0 - walk forward
-*1 - walk backward
-*2 - turn left
-*3 - turn right
+* 0 - walk forward
+* 1 - walk backward
+* 2 - turn left
+* 3 - turn right
 
 **State space:** The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction
 
 **Reward function:** A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana
 
 **DQN structure:** Similar to Google DeepMind's DQN Nature paper, "Human-level control through deep reinforcement learning", the adopted learning algorithm is a Deep Q-Learning algorithm. As the input vector is a state space instead of raw pixel data, a fully connected layer is used in the first layer instead of a convolutional neural network:
-*Fully connected layer 1: with input = 37 state spaces and output = 128 state spaces
-*Fully connected layer 2: with input = 128 and output = 64
-*Fully connected layer 3: with input = 64 and output = 4, (for each of the 4 actions)
+* Fully connected layer 1: with input = 37 state spaces and output = 128 state spaces
+* Fully connected layer 2: with input = 128 and output = 64
+* Fully connected layer 3: with input = 64 and output = 4, (for each of the 4 actions)
 
 **Parameters used in the DQN algorithm:**
-Maximum steps per episode: 1000
-Starting epsilion: 1.0
-Ending epsilion: 0.01
-Epsilion decay rates: 0.7, 0.8, 0.9 and 0.99
+* Maximum steps per episode: 1000
+* Starting epsilion: 1.0
+* Ending epsilion: 0.01
+* Epsilion decay rates: 0.7, 0.8, 0.9 and 0.99
 
 ## Installation Instruction
 
